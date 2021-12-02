@@ -24,12 +24,6 @@ pipeline {
                 }
             }
         }
-        stage('This is for nexus deployment'){
-            steps{
-                echo 'Hello this for nexus'
-                nexusPublisher nexusInstanceId: 'chetan_nexus', nexusRepositoryId: 'repo_nexus_1', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/lib/jenkins/workspace/date_02/target/vasaru.war']], mavenCoordinate: [artifactId: 'vasaru', groupId: 'cows', packaging: 'war', version: '2.3']]]
-            }
-        }
         stage('This is for tomcat'){
             steps{
                 echo 'Hello tomcat'
